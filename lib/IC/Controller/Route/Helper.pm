@@ -99,7 +99,7 @@ sub url {
                 push @form, map { "$key=$_" } @$val;
             }
             else {
-                push @form, "$key=$val";
+                push @form, sprintf('%s=%s', $key // '', $val // '');
             }
         }
         $get = join "\n", @form;
